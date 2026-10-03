@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pet Clubinho | Hotel, Creche, Escola e Adestramento</title>
+<meta name="description" content="Hotel, creche, escola e adestramento para cães em Osasco, Alphaville e Santana de Parnaíba. Equipe liderada por adestrador. Fale com a gente pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1d2a26;
+    --ink-soft:#4a5752;
+    --bg:#faf8f4;
+    --card:#ffffff;
+    --line:#e6e1d8;
+    --brand:#1f4d3f;
+    --brand-2:#2b6a56;
+    --accent:#c9a46a;
+    --wa:#1fa855;
+    --wa-dark:#178a45;
+    --radius:16px;
+    --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(31,77,63,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;padding-bottom:88px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  section{padding:64px 0}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-2);margin-bottom:12px}
+  .section-title{font-size:clamp(1.7rem,5vw,2.4rem);margin-bottom:14px}
+  .section-sub{color:var(--ink-soft);max-width:560px}
+
+  /* Botões */
+  .btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--wa);color:#fff;font-weight:600;font-size:1.05rem;padding:16px 26px;border-radius:999px;box-shadow:0 6px 18px rgba(31,168,85,.3);transition:background .2s,transform .2s;width:100%}
+  .btn-wa:hover{background:var(--wa-dark);transform:translateY(-1px)}
+  .btn-wa svg{width:22px;height:22px;flex-shrink:0}
+  .btn-ghost{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--brand);font-size:.95rem}
+  .btn-ghost svg{width:18px;height:18px}
+
+  /* Topo */
+  header{position:sticky;top:0;z-index:20;background:rgba(250,248,244,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:Fraunces,serif;font-weight:700;font-size:1.25rem;color:var(--brand)}
+  .logo-mark{width:36px;height:36px;border-radius:10px;background:var(--brand);display:grid;place-items:center}
+  .logo-mark svg{width:20px;height:20px}
+  .head-cta{display:none}
+
+  /* Hero */
+  .hero{padding:48px 0 56px;background:linear-gradient(180deg,var(--bg) 0%,#f1ede4 100%)}
+  .hero h1{font-size:clamp(2.1rem,8vw,3.6rem);margin-bottom:18px;letter-spacing:-.01em}
+  .hero h1 em{font-style:normal;color:var(--brand-2)}
+  .hero p.lead{font-size:1.1rem;color:var(--ink-soft);margin-bottom:28px;max-width:520px}
+  .hero-points{list-style:none;display:grid;gap:10px;margin-bottom:30px}
+  .hero-points li{display:flex;gap:10px;align-items:flex-start;font-weight:500}
+  .check{width:22px;height:22px;border-radius:50%;background:var(--brand);display:grid;place-items:center;flex-shrink:0;margin-top:1px}
+  .check svg{width:12px;height:12px}
+  .hero-note{margin-top:14px;font-size:.88rem;color:var(--ink-soft);text-align:center}
+  .hero-visual{display:none}
+
+  /* Faixa de região */
+  .regions{background:var(--brand);color:#fff;padding:22px 0}
+  .regions .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;font-size:.95rem}
+  .regions strong{font-weight:600;color:var(--accent)}
+  .regions span.dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4)}
+
+  /* Serviços */
+  .services-grid{display:grid;gap:16px;margin-top:36px}
+  .service{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .service-icon{width:48px;height:48px;border-radius:12px;background:#eaf1ee;display:grid;place-items:center;margin-bottom:16px}
+  .service-icon svg{width:26px;height:26px;stroke:var(--brand)}
+  .service h3{font-size:1.35rem;margin-bottom:8px}
+  .service p{color:var(--ink-soft);margin-bottom:18px;flex-grow:1}
+  .service .price{font-size:.85rem;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:14px;margin-bottom:14px}
+
+  /* Diferencial */
+  .diff{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .diff-grid{display:grid;gap:36px;align-items:center}
+  .diff-box{background:var(--brand);color:#fff;border-radius:20px;padding:32px;position:relative;overflow:hidden}
+  .diff-box::after{content:"";position:absolute;right:-40px;bottom:-40px;width:160px;height:160px;border-radius:50%;background:rgba(201,164,106,.18)}
+  .diff-box h3{color:#fff;font-size:1.6rem;margin-bottom:12px}
+  .diff-box p{color:rgba(255,255,255,.85)}
+  .diff-list{list-style:none;display:grid;gap:18px;margin-top:24px}
+  .diff-list li{display:flex;gap:14px}
+  .diff-list .n{font-family:Fraunces,serif;font-weight:700;color:var(--accent);font-size:1.4rem;line-height:1;min-width:28px}
+  .diff-list strong{display:block;margin-bottom:2px}
+  .diff-list span{color:var(--ink-soft);font-size:.95rem}
+
+  /* Como funciona */
+  .steps{display:grid;gap:14px;margin-top:32px;counter-reset:s}
+  .step{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .step::before{counter-increment:s;content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--ink);font-weight:700;display:grid;place-items:center;flex-shrink:0}
+  .step strong{display:block}
+  .step span{color:var(--ink-soft);font-size:.95rem}
+
+  /* Depoimentos */
+  .testi{background:#f1ede4}
+  .testi-grid{display:grid;gap:16px;margin-top:36px}
+  .t-card{background:var(--card);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .stars{display:flex;gap:2px;margin-bottom:14px}
+  .stars svg{width:18px;height:18px;fill:var(--accent)}
+  .t-card blockquote{color:var(--ink);font-size:1rem;margin-bottom:18px}
+  .t-who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+  .avatar{width:40px;height:40px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:700;font-family:Fraunces,serif}
+  .t-who strong{display:block;font-size:.95rem}
+  .t-who span{font-size:.82rem;color:var(--ink-soft)}
+
+  /* FAQ */
+  .faq{margin-top:28px;display:grid;gap:10px}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.3rem;color:var(--brand-2);line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--ink-soft);margin-top:10px}
+
+  /* CTA final */
+  .final{background:var(--brand);color:#fff;text-align:center}
+  .final h2{color:#fff;font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:14px}
+  .final p{color:rgba(255,255,255,.82);max-width:520px;margin:0 auto 28px}
+  .final .btn-wa{max-width:420px}
+
+  footer{background:#16362c;color:rgba(255,255,255,.7);font-size:.88rem;padding:28px 0;text-align:center}
+  footer strong{color:#fff}
+
+  /* Botão fixo */
+  .float-bar{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(250,248,244,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .float-bar .btn-wa{max-width:480px;margin:0 auto;display:flex;padding:15px 22px}
+  .pulse{position:relative}
+  .pulse::before{content:"";position:absolute;inset:0;border-radius:999px;box-shadow:0 0 0 0 rgba(31,168,85,.5);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,168,85,.45)}70%{box-shadow:0 0 0 14px rgba(31,168,85,0)}100%{box-shadow:0 0 0 0 rgba(31,168,85,0)}}
+  @media (prefers-reduced-motion:reduce){.pulse::before{animation:none}html{scroll-behavior:auto}}
+
+  /* Desktop */
+  @media (min-width:760px){
+    body{padding-bottom:0}
+    section{padding:88px 0}
+    .head-cta{display:inline-flex;width:auto;padding:10px 20px;font-size:.95rem;box-shadow:none}
+    .hero{padding:80px 0 88px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+    .hero .btn-wa{width:auto}
+    .hero-note{text-align:left}
+    .hero-visual{display:block}
+    .services-grid{grid-template-columns:repeat(2,1fr)}
+    .diff-grid{grid-template-columns:1fr 1fr;gap:56px}
+    .steps{grid-template-columns:repeat(3,1fr)}
+    .step{flex-direction:column}
+    .testi-grid{grid-template-columns:repeat(3,1fr)}
+    .faq{max-width:760px}
+    .float-bar{left:auto;right:24px;bottom:24px;padding:0;background:none;border:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+    .float-bar .btn-wa{width:auto}
+  }
+  @media (min-width:1000px){
+    .services-grid{grid-template-columns:repeat(4,1fr)}
+  }
+
+  /* Ilustração do hero */
+  .hv-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+  .hv-row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .hv-row:last-child{border-bottom:none}
+  .hv-row .service-icon{margin:0;width:44px;height:44px}
+  .hv-row strong{display:block}
+  .hv-row span{font-size:.88rem;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<!-- SVG sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></symbol>
+  <symbol id="paw" viewBox="0 0 24 24"><g fill="#fff"><circle cx="5" cy="10" r="2.2"/><circle cx="9" cy="5.5" r="2.2"/><circle cx="15" cy="5.5" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M12 10.5c-3 0-6 4.2-6 6.6 0 2 1.6 2.9 3.2 2.9 1.2 0 1.8-.6 2.8-.6s1.6.6 2.8.6c1.6 0 3.2-.9 3.2-2.9 0-2.4-3-6.6-6-6.6z"/></g></symbol>
+  <symbol id="ck" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.5l4.5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="star" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></symbol>
+  <symbol id="i-hotel" viewBox="0 0 24 24"><g fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V9l9-5 9 5v11"/><path d="M7 20v-5h10v5"/><path d="M7 15v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M2 20h20"/></g></symbol>
+  <symbol id="i-creche" viewBox="0 0 24 24"><g fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></symbol>
+  <symbol id="i-escola" viewBox="0 0 24 24"><g fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/><path d="M22 9v6"/></g></symbol>
+  <symbol id="i-adestra" viewBox="0 0 24 24"><g fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></g></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a href="#topo" class="logo"><span class="logo-mark"><svg><use href="#paw"/></svg></span>Pet Clubinho</a>
+    <a class="btn-wa head-cta wa-link" data-msg="Olá! Vim pelo site e gostaria de saber mais sobre o Pet Clubinho." href="#"><svg><use href="#wa"/></svg>WhatsApp</a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Osasco · Alphaville · Santana de Parnaíba</span>
+        <h1>Seu cão bem cuidado, <em>feliz e educado</em> enquanto você vive a sua rotina.</h1>
+        <p class="lead">Hotel, creche, escola e adestramento com uma equipe liderada por adestrador. Carinho de verdade, atividades de enriquecimento e atenção a cada detalhe.</p>
+        <ul class="hero-points">
+          <li><span class="check"><svg><use href="#ck"/></svg></span>Dono adestrador que treina toda a equipe</li>
+          <li><span class="check"><svg><use href="#ck"/></svg></span>Atividades de enriquecimento ambiental</li>
+          <li><span class="check"><svg><use href="#ck"/></svg></span>Famílias que confiam em nós há anos</li>
+        </ul>
+        <a class="btn-wa pulse wa-link" data-msg="Olá! Vim pelo site e gostaria de saber mais sobre o Pet Clubinho." href="#"><svg><use href="#wa"/></svg>Falar no WhatsApp agora</a>
+        <p class="hero-note">Resposta rápida · Tire dúvidas e consulte valores sem compromisso</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hv-card">
+          <div class="hv-row"><div class="service-icon"><svg><use href="#i-hotel"/></svg></div><div><strong>Hotel</strong><span>Hospedagem com rotina e carinho</span></div></div>
+          <div class="hv-row"><div class="service-icon"><svg><use href="#i-creche"/></svg></div><div><strong>Creche</strong><span>Gasto de energia e socialização</span></div></div>
+          <div class="hv-row"><div class="service-icon"><svg><use href="#i-escola"/></svg></div><div><strong>Escola</strong><span>Aprendizado enquanto se diverte</span></div></div>
+          <div class="hv-row"><div class="service-icon"><svg><use href="#i-adestra"/></svg></div><div><strong>Adestramento</strong><span>Comportamento e comandos</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="regions">
+    <div class="wrap">
+      <strong>Atendemos:</strong> Osasco <span class="dot"></span> Alphaville <span class="dot"></span> Santana de Parnaíba
+    </div>
+  </div>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="wrap">
+      <span class="eyebrow">Nossos serviços</span>
+      <h2 class="section-title">Tudo o que seu cão precisa, em um só lugar</h2>
+      <p class="section-sub">Escolha o serviço e fale direto com a gente. Montamos o plano ideal para a rotina da sua família e do seu pet.</p>
+
+      <div class="services-grid">
+        <article class="service">
+          <div class="service-icon"><svg><use href="#i-hotel"/></svg></div>
+          <h3>Hotel</h3>
+          <p>Viagem, compromisso ou imprevisto? Seu cão fica hospedado com rotina, companhia e todo o carinho da equipe. Você viaja tranquilo.</p>
+          <div class="price">Valores sob consulta</div>
+          <a class="btn-ghost wa-link" data-msg="Olá! Gostaria de saber valores e disponibilidade do HOTEL do Pet Clubinho." href="#">Consultar hotel <svg><use href="#arrow"/></svg></a>
+        </article>
+
+        <article class="service">
+          <div class="service-icon"><svg><use href="#i-creche"/></svg></div>
+          <h3>Creche</h3>
+          <p>Um dia cheio de brincadeiras, socialização e atividades de enriquecimento. Seu cão volta para casa cansado, feliz e mais equilibrado.</p>
+          <div class="price">Planos de 1x a 5x na semana · Valores sob consulta</div>
+          <a class="btn-ghost wa-link" data-msg="Olá! Gostaria de saber os planos e valores da CRECHE do Pet Clubinho." href="#">Consultar creche <svg><use href="#arrow"/></svg></a>
+        </article>
+
+        <article class="service">
+          <div class="service-icon"><svg><use href="#i-escola"/></svg></div>
+          <h3>Escola</h3>
+          <p>A diversão da creche somada ao aprendizado de comandos e bons hábitos, conduzido por quem entende de comportamento canino.</p>
+          <div class="price">Valores sob consulta</div>
+          <a class="btn-ghost wa-link" data-msg="Olá! Gostaria de saber como funciona e os valores da ESCOLA do Pet Clubinho." href="#">Consultar escola <svg><use href="#arrow"/></svg></a>
+        </article>
+
+        <article class="service">
+          <div class="service-icon"><svg><use href="#i-adestra"/></svg></div>
+          <h3>Adestramento</h3>
+          <p>Puxa a guia, late demais, não obedece? Trabalhamos o comportamento do seu cão com método e paciência, e orientamos você também.</p>
+          <div class="price">Valores sob consulta</div>
+          <a class="btn-ghost wa-link" data-msg="Olá! Gostaria de saber mais sobre o ADESTRAMENTO do Pet Clubinho." href="#">Consultar adestramento <svg><use href="#arrow"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAL -->
+  <section class="diff">
+    <div class="wrap diff-grid">
+      <div class="diff-box">
+        <span class="eyebrow" style="color:var(--accent)">Nosso diferencial</span>
+        <h3>O dono do Pet Clubinho é adestrador.</h3>
+        <p>E isso muda tudo. Todo o conhecimento de comportamento canino é passado para a equipe, que sabe lidar com cada cão de forma segura, tranquila e respeitosa.</p>
+      </div>
+      <div>
+        <h2 class="section-title">Por que as famílias confiam no Pet Clubinho</h2>
+        <ul class="diff-list">
+          <li><span class="n">01</span><div><strong>Equipe preparada</strong><span>Treinada por um adestrador, atenciosa com os cães e com os tutores.</span></div></li>
+          <li><span class="n">02</span><div><strong>Enriquecimento ambiental</strong><span>Atividades que estimulam corpo e mente, não só um espaço para passar o dia.</span></div></li>
+          <li><span class="n">03</span><div><strong>Flexibilidade de verdade</strong><span>Planos que se encaixam na sua rotina, com creche e hospedagem quando você precisar.</span></div></li>
+          <li><span class="n">04</span><div><strong>Seu cão aprende</strong><span>Durante a estadia, a equipe ensina e reforça comandos.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Como funciona</span>
+      <h2 class="section-title">Começar é simples</h2>
+      <div class="steps">
+        <div class="step"><div><strong>Chame no WhatsApp</strong><span>Conte sobre seu cão e o que você precisa.</span></div></div>
+        <div class="step"><div><strong>Receba o plano ideal</strong><span>Indicamos o serviço e a frequência certos para ele.</span></div></div>
+        <div class="step"><div><strong>Seu cão vem se divertir</strong><span>Com cuidado, carinho e acompanhamento da equipe.</span></div></div>
+      </div>
+      <div style="margin-top:28px;max-width:420px">
+        <a class="btn-wa wa-link" data-msg="Olá! Vim pelo site e gostaria de começar no Pet Clubinho." href="#"><svg><use href="#wa"/></svg>Quero começar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="testi" id="depoimentos">
+    <div class="wrap">
+      <span class="eyebrow">Depoimentos reais</span>
+      <h2 class="section-title">Quem conhece, recomenda</h2>
+      <p class="section-sub">Palavras de famílias que deixam seus cães com a gente toda semana.</p>
+
+      <div class="testi-grid">
+        <figure class="t-card">
+          <div class="stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+          <blockquote>“Meu cachorro frequenta a creche 3x na semana, ama muito, vai sempre muito ansioso e feliz! Sempre que preciso ele fica hospedado, e agradeço muito a atenção e carinho de todos! Percebi algo muito importante na Pet Clubinho, o fato do dono ser adestrador, vejo que faz toda diferença isso, e vejo que ele passa essa experiência para toda a equipe! E também já usamos o serviço de adestramento, que nos ajuda sempre! O Pacco ama e eu amo!”</blockquote>
+          <figcaption class="t-who"><span class="avatar">P</span><div><strong>Família do Pacco</strong><span>Creche, hotel e adestramento</span></div></figcaption>
+        </figure>
+
+        <figure class="t-card">
+          <div class="stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+          <blockquote>“Tombi frequenta a creche Pet Clubinho 1x na semana há 3 anos e ama muitoooo ir pra lá!!! Às vezes ele fica hospedado e corre tudo superbem também. A equipe do Pet Clubinho é muito bacana, são atenciosos, legais com os cachorros e com a gente, flexíveis, ensinam comandos, são tranquilos e ponta firme!”</blockquote>
+          <figcaption class="t-who"><span class="avatar">T</span><div><strong>Família do Tombi</strong><span>Creche e hotel · cliente há 3 anos</span></div></figcaption>
+        </figure>
+
+        <figure class="t-card">
+          <div class="stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+          <blockquote>“Atendimento excelente e muito cuidado com nossos pets. Atividades de enriquecimento ambiental e muito carinho.”</blockquote>
+          <figcaption class="t-who"><span class="avatar">C</span><div><strong>Cliente Pet Clubinho</strong><span>Tutor(a)</span></div></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2 class="section-title">Ficou alguma dúvida?</h2>
+      <div class="faq">
+        <details><summary>Quais regiões vocês atendem?</summary><p>Atendemos tutores de Osasco, Alphaville e Santana de Parnaíba.</p></details>
+        <details><summary>Quanto custa?</summary><p>Os valores variam conforme o serviço e a frequência escolhida. Chame no WhatsApp e passamos todas as opções para você.</p></details>
+        <details><summary>Posso combinar creche e hotel?</summary><p>Sim! Muitas famílias usam a creche durante a semana e o hotel quando precisam viajar. Seu cão já conhece o lugar e a equipe, o que deixa a hospedagem ainda mais tranquila.</p></details>
+        <details><summary>Meu cão tem alguma questão de comportamento. Ele pode frequentar?</summary><p>Fale com a gente. Como o dono é adestrador, avaliamos cada caso com cuidado e indicamos o melhor caminho, inclusive com adestramento se for o caso.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Seu cão merece esse cuidado.</h2>
+      <p>Chame agora no WhatsApp, conte um pouco sobre ele e descubra o plano ideal para a sua rotina.</p>
+      <a class="btn-wa wa-link" data-msg="Olá! Vim pelo site e gostaria de saber mais sobre o Pet Clubinho." href="#"><svg><use href="#wa"/></svg>Falar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Pet Clubinho</strong> · Hotel, creche, escola e adestramento</p>
+    <p>Osasco · Alphaville · Santana de Parnaíba · WhatsApp (11) 97655-6942</p>
+  </div>
+</footer>
+
+<!-- Botão fixo -->
+<div class="float-bar">
+  <a class="btn-wa pulse wa-link" data-msg="Olá! Vim pelo site e gostaria de saber mais sobre o Pet Clubinho." href="#" aria-label="Falar com o Pet Clubinho no WhatsApp"><svg><use href="#wa"/></svg>Falar no WhatsApp</a>
+</div>
+
+<script>
+  (function(){
+    var NUM = "5511976556942";
+    document.querySelectorAll(".wa-link").forEach(function(a){
+      var msg = a.getAttribute("data-msg") || "Olá! Vim pelo site do Pet Clubinho.";
+      a.href = "https://wa.me/" + NUM + "?text=" + encodeURIComponent(msg);
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+  })();
+</script>
+</body>
+</html>
